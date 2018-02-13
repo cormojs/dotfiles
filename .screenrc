@@ -1,0 +1,41 @@
+#-*- conf -*-
+defscrollback 10000
+
+# term xterm-256color
+# defbce on
+
+defutf8 on
+defkanji utf-8
+encoding utf-8 utf-8
+defencoding utf-8
+
+escape ^o^o
+
+bind R remove
+
+bind -c REGION 2 split
+bind -c REGION 3 split -v
+bind -c REGION 1 only
+bind -c REGION 0 remove
+bind -c REGION o focus
+bind -c REGION \^ resize
+bind x command -c REGION
+
+bind ^i focus
+
+# for IS01
+bind 8 stuff '('
+bind 9 stuff ')'
+bind - stuff '~'
+bind q stuff '!'
+bind w stuff '"'
+bind e stuff '#'
+bind r stuff '$'
+bind t stuff '%'
+bind y stuff '&'
+bind u stuff "'"
+bind = stuff '^'
+bind \ stuff '|'
+
+# caption always "%?%F%{= wk}%:%{= ww}%?%-w%{=u Wk}%n %t%{-}%+w"
+hardstatus alwayslastline "[%02c] %`%-w%{=b bw}%n %t%{-}%+w"
